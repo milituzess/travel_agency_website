@@ -1,0 +1,33 @@
+#root { /*Стили для корневого элемента React*/
+  /* Шрифты */
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5; /* межстрочный интервал */
+  font-weight: 400; /* толщина шрифта */
+  width: 100%; /*  */
+
+  /* Цветовая схема */
+  color-scheme: light dark; /* браузер сам выбирает светлую/темную тему */
+  color: rgba(255, 255, 255, 0.87); /*  */
+  background-color: #242424; /* фон */
+
+  /* Оптимизации шрифтов */
+  font-synthesis: none; /* запрещает браузеру создавать жирные/курсивные версии шрифтов */
+  text-rendering: optimizeLegibility; /* улучшает читаемость текста */
+  -webkit-font-smoothing: antialiased; /* сглаживание шрифтов в Safari */
+  -moz-osx-font-smoothing: grayscale; /* сглаживание в Firefox */
+}
+
+body { /* Стили для всей страницы */
+  margin: 0; /* Убирает отступы по умолчанию */
+  display: flex; /* Включает Flexbox */
+  place-items: center; /* Центрирует по вертикали и горизонтали */
+  min-width: 320px; /* Минимальная ширина страницы */
+  min-height: 100vh; /* Минимальная высота = весь экран */
+}
+
+@media (prefers-color-scheme: light) { /* Адаптация к системной теме */
+  :root {
+    color: #318edf; /* Синий текст */
+    background-color: #ffffff; /* Белый фон */
+  }
+}
