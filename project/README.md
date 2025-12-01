@@ -49,9 +49,17 @@ npm install
 
 npm run build
 
-3. Запуск демо-приложения
+3. Запуск приложений
 
-cd ../frontend
+cd ../client-app
+
+npm install
+
+npm run dev
+
+и 
+
+cd ../admin-panel
 
 npm install
 
@@ -59,34 +67,32 @@ npm run dev
 
 4. Открытие в браузере
 
-Приложение будет доступно по адресу: http://localhost:5173
+Приложение client-app будет доступно по адресу: http://localhost:5173
+Приложение admin-panel будет доступно по адресу: http://localhost:5174
 
 ## Скрипты проекта
-### UI Library (ui-library/)
+### ui-library
 - npm run build - сборка библиотеки
 - npm run dev - разработка с вотчером
 - npm run test - запуск тестов
 - npm run lint - проверка кодстайла
 - npm run test:coverage - запуск тестов с генерацией отчета о покрытии кода
 
-### Frontend (frontend/)
+### admin-panel и client-app
 - npm run dev - запуск dev-сервера
-- npm run build - сборка для production
 - npm run test - запуск тестов
 - npm run lint - проверка кодстайла
+- npm run test:coverage - запуск тестов с генерацией отчета о покрытии кода
 
 ## Примеры работы приложения
-PhotoGallery компонент
-![1](<pictures-for-readme/image_2.png>) 
-
-ProductCard компонент
-![2](<pictures-for-readme/image_3.png>) 
-
-Несколько ProductCard компонентов
-![3](<pictures-for-readme/image_4.png>) 
-
-Адаптивный дизайн
-![4](<pictures-for-readme/image_1.png>) 
+![1](<pictures-for-readme/lab7_image_1.png>) 
+![2](<pictures-for-readme/lab7_image_2.png>) 
+![3](<pictures-for-readme/lab7_image_3.png>) 
+![4](<pictures-for-readme/lab7_image_4.png>) 
+![5](<pictures-for-readme/lab7_image_5.png>) 
+![6](<pictures-for-readme/lab7_image_6.png>) 
+![7](<pictures-for-readme/lab7_image_7.png>) 
+![8](<pictures-for-readme/lab7_image_8.png>) 
 
 
 ## Тестирование
@@ -94,7 +100,9 @@ ProductCard компонент
 cd ui-library
 
 npm run test
+npm run test:coverage
 
 cd ../frontend
 
 npm run test
+npm run test:coverage

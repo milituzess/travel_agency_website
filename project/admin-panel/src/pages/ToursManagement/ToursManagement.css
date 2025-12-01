@@ -1,0 +1,140 @@
+.tours-management {
+  width: 100%;
+  max-width: 800px; 
+  margin: 0 auto; 
+}
+
+.tours-grid {
+  display: flex;
+  flex-direction: column; 
+  gap: 1.5rem;
+  width: 90%; 
+  margin: 0 auto; 
+}
+
+.tour-card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+  width: 100%; 
+}
+
+.tour-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.tour-card.inactive {
+  opacity: 0.7;
+  background-color: #f8f9fa;
+  border: 1px solid #d0d0d0;
+}
+
+.tour-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.tour-title {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  margin: 0;
+  flex: 1;
+  font-weight: 600;
+}
+
+.tour-description {
+  color: #5a5a5a;
+  margin-bottom: 1rem;
+  flex: 1;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.tour-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #787878 !important;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.tour-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: auto;
+  flex-wrap: wrap; 
+}
+
+.tour-actions .action-button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.tour-actions .action-button.edit {
+  background-color: #6c757d; 
+}
+
+.tour-actions .action-button.edit:hover {
+  background-color: #5a6268; 
+  transform: translateY(-2px);
+}
+
+.tour-actions .action-button.toggle.activate {
+  background-color: #787878; 
+}
+
+.tour-actions .action-button.toggle.deactivate {
+  background-color: #787878; 
+}
+
+.tour-actions .action-button.toggle:hover {
+  background-color: #5a5a5a; 
+  transform: translateY(-2px);
+}
+
+.tour-actions .action-button.delete {
+  background-color: #a0a0a0; 
+}
+
+.tour-actions .action-button.delete:hover {
+  background-color: #8a8a8a; 
+  transform: translateY(-2px);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  min-width: 80px;
+  text-align: center;
+}
+
+.status-badge.active {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-badge.inactive {
+  background-color: #f8d7da;
+  color: #721c24;
+}
