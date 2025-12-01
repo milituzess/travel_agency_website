@@ -1,0 +1,60 @@
+.ui-contact-card {
+  background:  #727272;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.ui-contact-card-title {
+  font-size: 1.5rem;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+
+.ui-contact-card-phone {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: 1px;
+}
+
+.ui-contact-card-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.ui-contact-card-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.ui-contact-card-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ui-contact-card-link.whatsapp:hover {
+  background-color: #25D366;
+  border-color: #25D366;
+}
+
+.ui-contact-card-link.telegram:hover {
+  background-color: #0088cc;
+  border-color: #0088cc;
+}
+
+.ui-contact-card-link.vk:hover {
+  background-color: #4C75A3;
+  border-color: #4C75A3;
+}

@@ -1,0 +1,81 @@
+.team-management {
+  width: 99%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.page-header h1 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+}
+
+.add-button {
+  background: #777;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.team-table {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.team-table th {
+  background: #666;
+  color: white;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.team-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+  color: #444;
+  font-size: 0.85rem;
+}
+
+.member-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #888;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.status-badge {
+  padding: 0.3rem 0.6rem;
+  background: #eee;
+  color: #333;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  display: inline-block;
+}
+
+.action-button {
+  padding: 0.3rem 0.6rem;
+  background: #888;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  margin-right: 0.3rem;
+  cursor: pointer;
+}

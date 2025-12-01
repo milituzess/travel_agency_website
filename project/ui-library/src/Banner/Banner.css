@@ -1,0 +1,124 @@
+.ui-banner {
+  width: 100%;
+  min-height: 500px;
+  background: #ffffff;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.ui-banner-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 4rem 2rem;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui-banner-content {
+  max-width: 800px;
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.ui-banner-title {
+  font-size: 3rem;
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ui-banner-subtitle {
+  font-size: 1.5rem;
+  margin: 0 0 2.5rem 0;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+.ui-banner-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 3rem 0;
+  text-align: left;
+  display: inline-block;
+}
+
+.ui-banner-benefit {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  padding-left: 0.5rem;
+}
+
+.ui-banner-benefit:last-child {
+  margin-bottom: 0;
+}
+
+.ui-banner-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ui-banner-button {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+.ui-banner-button--call {
+  background-color: #4f4f4f; 
+  color: white;
+}
+
+.ui-banner-button--call:hover {
+  background-color: #1e1e1e;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+.ui-banner-button--request {
+  background-color: #4f4f4f;
+  color: #ffffff;
+}
+
+.ui-banner-button--request:hover {
+  background-color: #1e1e1e;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .ui-banner-title {
+    font-size: 2.5rem;
+  }
+  
+  .ui-banner-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .ui-banner-benefit {
+    font-size: 1rem;
+  }
+  
+  .ui-banner-button {
+    padding: 0.8rem 1.5rem;
+    min-width: 160px;
+    font-size: 1rem;
+  }
+  
+  .ui-banner-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
