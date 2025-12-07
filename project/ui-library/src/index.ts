@@ -12,3 +12,9 @@ export type { ContactCardProps } from './ContactCard/ContactCard'
 
 export { Banner } from './Banner/Banner'
 export type { BannerProps } from './Banner/Banner'
+
+export { TeamCard } from './TeamCard/TeamCard'
+export type { TeamCardProps } from './TeamCard/TeamCard'
+
+export { Form } from './Form/Form'
+export type { FormProps } from './Form/Form'

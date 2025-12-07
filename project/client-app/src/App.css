@@ -1,5 +1,5 @@
 nav {
-  background-color: #f0f0f0;
+  background-color: rgb(79, 119, 79);
   padding: 1rem;
 }
 
@@ -13,15 +13,14 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: #333;
+  color: #ffffff;
   padding: 0.5rem 1rem;
   border-radius: 4px;
 }
 
 nav a:hover {
-  background-color: #ddd;
+  color: rgb(26, 54, 26);
 }
-
 
 * {
   box-sizing: border-box; 
@@ -31,51 +30,24 @@ nav a:hover {
 
 /* Основной контейнер приложения */
 .app {
-  min-height: 100vh; /* Минимальная высота = весь экран */
-  background: linear-gradient(180deg, #e4dfd4 0%, #b7b3ab 100%); /* Градиентный фон от синего к фиолетовому под углом 135° */
+  min-height: 100%; 
+  background-color: rgba(103, 116, 103, 0.3);
+  /*background: linear-gradient(180deg, #e4dfd4 0%, #b7b3ab 100%); */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Набор шрифтов */
   line-height: 1.6; /* Межстрочный интервал */
-}
-
-/* Шапка приложения */
-.app-header {
-  background: rgba(255, 255, 255, 0.9); /* Белый фон с прозрачностью 95% */
-  backdrop-filter: blur(10px); /* Размытие фона behind элемента */
-  padding: 2rem; /* Внутренние отступы */
-  text-align: center; /* Выравнивание текста по центру */
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1); /* Тень: смещение X=0, Y=2px, размытие 20px, черный с прозрачностью 10% */
-  margin-bottom: 2rem; /* Внешний отступ снизу */
-}
-
-/* Заголовок h1 в шапке */
-.app-header h1 {
-  color: #1b1b1b; /* Цвет текста */
-  font-size: 2.5rem; /* Размер шрифта */
-  margin-bottom: 0.5rem; /* Отступ снизу */
-  background: #1b1b1b;
-  -webkit-background-clip: text; /* Обрезаем фон по контуру текста (для WebKit браузеров) */
-  -webkit-text-fill-color: transparent; /* Делаем текст прозрачным (для WebKit) */
-  background-clip: text; /* Обрезаем фон по контуру текста (стандартное свойство) */
-}
-
-/* Параграф в шапке */
-.app-header p {
-  color: #444444; /* Серый цвет текста */
-  font-size: 1.1rem; /* Размер шрифта */
 }
 
 /* Основная область контента */
 .app-main {
   width: 100%; /* Ширина 100% родителя */
   margin: 0 auto; /* Центрирование: отступы сверху/снизу 0, слева/справа auto */
-  padding: 0 1rem 2rem; /* Отступы: сверху 0, слева/справа 1rem, снизу 2rem */
+  text-align: center; /* Центрирование текста */
 }
 
 /* Футер приложения */
 .app-footer {
   width: 100%; /* Ширина 100% */
   margin: 2rem auto 0; /* Отступы: сверху 2rem, слева/справа auto, снизу 0 */
-  padding: 0 1rem 2rem; /* Отступы: сверху 0, слева/справа 1rem, снизу 2rem */
 }
 
 /* Контент в футере */
@@ -91,11 +63,12 @@ nav a:hover {
 
 /* Секции */
 .section {
-  margin-bottom: 3rem; /* Большой отступ снизу 3rem */
+  margin-bottom: 3rem; 
+  padding-top: 2rem;
 }
 
 .section h2 {
-  color: #1b1b1b; /* Цвет текста */
+  color: #ffffff; /* Цвет текста */
   margin-bottom: 1.5rem; /* Отступ снизу */
   font-size: 1.8rem; /* Размер шрифта */
   text-align: center; /* Выравнивание по центру */
@@ -107,22 +80,6 @@ nav a:hover {
   margin-top: 1rem; /* Отступ снизу */
   font-size: 1.3rem; /* Размер шрифта */
   text-align: center; /* Выравнивание по центру */
-}
-
-/* Сетка для демо-элементов */
-.demo-grid {
-  display: grid; /* Включаем CSS Grid layout */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Колонки: автоматическое количество, минимальная ширина 250px, максимальная 1 fraction */
-  gap: 1.5rem; /* Расстояние между grid-элементами */
-  margin: 1rem 0; /* Отступы: сверху/снизу 1rem, слева/справа 0 */
-}
-
-/* Сетка для карточек */
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin: 1rem 0;
 }
 
 /* Сетка для карточек туров */
@@ -137,25 +94,6 @@ nav a:hover {
   justify-items: center;
 }
 
-/* Отдельный демо-элемент */
-.demo-item {
-  display: flex;
-  flex-direction: column; /* Элементы в колонку */
-  align-items: center; /* Выравнивание элементов по центру горизонтально */
-  gap: 0.75rem; /* Расстояние между flex-элементами */
-  padding: 1rem; /* Внутренние отступы */
-  background: #f8f9fa; /* Фон */
-  border-radius: 8px; /* Закругленные углы  */
-  border: 1px solid #e9ecef; /* Граница толщиной 1px такого-то цвета */
-}
-
-/* Стиль для счетчика кликов */
-.demo-counter {
-  font-size: 0.875rem; /* Маленький размер шрифта 0.875rem (14px) */
-  color: #666; /* Серый цвет текста */
-  font-weight: 500; /* Полужирное начертание */
-}
-
 /* Стиль для подсказок */
 .demo-hint {
   font-size: 0.75rem; /* Очень маленький размер шрифта 0.75rem (12px) */
@@ -164,170 +102,131 @@ nav a:hover {
   text-align: center; /* Выравнивание по центру */
 }
 
-/* Карточки действий */
-.card-actions {
-  display: flex;
-  gap: 0.5rem; /* Расстояние между кнопками 0.5rem (8px) */
-  margin-top: 1rem; /* Отступ сверху 1rem */
-  flex-wrap: wrap; /* Перенос кнопок на новую строку если не помещаются */
+.description-content {
+  line-height: 1.8;
+  color: #2d3748;
 }
 
-/* Формы */
-/* Контейнер для формы */
-.demo-form {
-  display: flex;
-  flex-direction: column; /* Элементы располагаются в колонку */
-  gap: 1rem; /* Расстояние между элементами формы 1rem (16px) */
+.description-content p {
+  margin-bottom: 1rem;
+  white-space: pre-line;
 }
 
-/* Группа полей формы (label + input) */
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+.description-content p:last-child {
+  margin-bottom: 0;
 }
 
-/* Стили для label в форме */
-.form-group label {
-  font-weight: 500; /* Полужирное начертание */
-  color: #333; /* Темно-серый цвет текста */
-  font-size: 0.875rem; /* Размер шрифта */
-}
 
-/* Стили для input полей */
-.form-input {
-  padding: 0.5rem; /* Внутренние отступы */
-  border: 1px solid #ddd; /* Светло-серая граница толщиной 1px */
-  border-radius: 4px; /* Закругленные углы радиусом 4px */
-  font-size: 0.875rem; /* Размер шрифта */
-  transition: border-color 0.2s; /* Плавное изменение цвета границы за 0.2 секунды */
-}
 
-/* Стили для input при фокусе (когда пользователь кликает на поле) */
-.form-input:focus {
-  outline: none; /* Убираем стандартную браузерную обводку */
-  border-color: #007bff; /* Синяя граница при фокусе */
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); /* Синяя тень вокруг поля (эффект свечения) */
-}
 
-/* Информационный контент */
-/* Контейнер для информационных блоков */
-.info-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem; /* Расстояние между информационными блоками */
-  margin-bottom: 1rem; /* Отступ снизу 1rem */
-}
-
-/* Отдельный информационный блок */
-.info-item {
-  padding: 0.5rem; /* Внутренние отступы */
-  background: #f8f9fa; /* Фон */
-  border-radius: 4px;
-  border-left: 3px solid #007bff; /* Синяя левая граница (акцентная полоска) */
-}
-
-/* Взаимодействие компонентов */
-/* Сетка для демонстрации взаимодействия компонентов */
-.interaction-demo {
+/* Стили для объединенной секции */
+.tour-details-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Колонки: автоматическое количество, минимальная ширина 300px */
-  gap: 1.5rem; /* Расстояние между элементами сетки 1.5rem */
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Отдельный элемент взаимодействия */
-.interaction-item {
+/* Левая колонка - карточка */
+.details-column {
+  padding: 1.5rem;
+}
+
+/* Правая колонка - карточка */
+.program-column {
+  padding: 1.5rem;
+}
+
+/* Заголовки внутри колонок */
+.details-column h3 {
+  color: #2d3748;
+  margin: 0 0 0 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 1.6rem;
+}
+
+/* Описание тура */
+.description-content p {
+  margin: 1rem 1rem 1rem 1rem;
+  color: #4a5568;
+}
+
+/* Список включенного */
+.included-list {
+  font-size: 1.1rem;
+  list-style: none;
+  padding: 1rem 1rem 1rem 1rem;
+  margin: 0.5rem 1rem 1rem 1rem;
+  background-color: rgba(103, 116, 103, 0.3);
+  border-radius: 10px;
+}
+
+.included-item {
+  padding: 0.1rem 0;
   display: flex;
-  flex-direction: column; /* Элементы в колонку */
+  align-items: flex-start;
+  gap: 0.75rem;
 }
 
-/* Демо счетчика и демо состояния - общие стили */
-.counter-demo,
-.state-demo {
+.included-item span {
+  line-height: 0.9;
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+}
+
+.check-icon {
+  margin-top: 0.1rem;
+}
+
+/* Таймлайн программы */
+.itinerary-timeline {
+  margin: 3rem 1rem 1rem 1rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-day {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.day-circle {
+  width: 2.8rem;
+  height: 2.8rem;
+  background: rgb(79, 119, 79);
+  color: white;
+  border-radius: 50%;
   display: flex;
-  flex-direction: column;
-  gap: 1rem; /* Расстояние между элементами */
-  align-items: flex-start; /* Выравнивание элементов по левому краю */
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
 }
 
-/* Адаптивность */
-/* Медиа-запрос для экранов шириной до 768px (планшеты и мобильные) */
-@media (max-width: 768px) {
-  .app-header {
-    padding: 1.5rem 1rem; /* Уменьшаем отступы в шапке: 1.5rem сверху/снизу, 1rem слева/справа */
-  }
-  
-  .app-header h1 {
-    font-size: 2rem; /* Уменьшаем размер заголовка */
-  }
-  
-  .app-main {
-    padding: 0 0.5rem 1rem; /* Уменьшаем отступы основного контента */
-  }
-
-  /* Изменяем сетки на мобильных */
-  .demo-grid,
-  .cards-grid {
-    grid-template-columns: 1fr; /* Одна колонка вместо нескольких */
-    gap: 1rem; /* Уменьшаем расстояние между элементами */
-  }
-  
-  .section h2 {
-    font-size: 1.5rem; /* Уменьшаем размер подзаголовков секций */
-  }
+.day-title {
+  color: #2d3748;
+  margin: 0 0 0 1rem;
+  font-size: 1.5rem;
 }
 
-/* Медиа-запрос для экранов шириной до 480px (мобильные телефоны) */
-@media (max-width: 480px) {
-  .app-header h1 {
-    font-size: 1.75rem; /* Еще больше уменьшаем заголовок */
-  }
-  
-  .card-actions {
-    flex-direction: column; /* Кнопки в колонку вместо строки */
-    align-items: stretch; /* Растягиваем кнопки на всю ширину */
-  }
-  
-  .interaction-demo {
-    grid-template-columns: 1fr; /* Одна колонка в демо взаимодействия */
-  }
+.day-description {
+  color: #718096;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 0.5rem 1.5rem;
 }
 
-/* Анимации */
-.demo-item {
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Плавные переходы для transform и box-shadow */
-}
-
-.demo-item:hover {
-  transform: translateY(-2px); /* Поднимаем элемент на 2px вверх */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Увеличиваем тень для эффекта "поднятия" */
-}
-
-/* Кастомные стили для демо */
-/* Убираем отступ у последней секции */
-.section:last-child {
-  margin-bottom: 0; /* Последняя секция не имеет отступа снизу */
-}
-
-/* Списки в карточках */
-/* Стили для неупорядоченных списков */
-ul {
-  padding-left: 1.5rem; /* Отступ слева для маркеров списка */
-  color: #555; /* Темно-серый цвет текста */
-}
-
-/* Стили для элементов списка */
-li {
-  margin-bottom: 0.25rem; /* Отступ между элементами списка */
-}
-
-.section .cards-grid {
-  display: flex;
-  flex-direction: column; /* Элементы в колонку */
-  align-items: center; /* Выравнивание элементов по центру горизонтально */
-  gap: 0.75rem; /* Расстояние между flex-элементами */
-  padding: 1rem; /* Внутренние отступы */
-  background: rgba(255, 255, 255, 0.5); /* Фон */
-  border-radius: 8px; /* Закругленные углы  */
-  border: 1px solid #e9ecef; /* Граница толщиной 1px такого-то цвета */
-}

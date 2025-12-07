@@ -34,7 +34,6 @@ export function TeamManagement() {
               <th>Должность</th>
               <th>Email</th>
               <th>Телефон</th>
-              <th>Статус</th>
               <th>Действия</th>
             </tr>
           </thead>
@@ -53,11 +52,6 @@ export function TeamManagement() {
                 <td>{member.position}</td>
                 <td>{member.email}</td>
                 <td>{member.phone}</td>
-                <td>
-                  <span className={`status-badge ${member.isActive ? 'active' : 'inactive'}`}>
-                    {member.isActive ? 'Активен' : 'Не активен'}
-                  </span>
-                </td>
                 <td>
                   <div className="action-buttons">
                     <button className="action-button edit">Изменить</button>

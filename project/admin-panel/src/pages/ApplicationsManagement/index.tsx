@@ -64,7 +64,6 @@ export function ApplicationsManagement() {
                 <td>
                   <div className="contact-info">
                     <div>{app.phone}</div>
-                    <div>{app.email}</div>
                   </div>
                 </td>
                 <td>{app.tour}</td>

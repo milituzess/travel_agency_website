@@ -31,13 +31,13 @@ function AdminLayout() {
     <div className="admin-layout">
       <aside className="sidebar">
         <div className="sidebar-header">
-          <h2>Турагенство</h2>
+          <h2>Kessirass</h2>
           <p>Админ панель</p>
         </div>
         
         <nav className="sidebar-nav">
           <Link to="/tours" className="nav-link">
-            <span>Управление турами</span>
+            <span>Туры</span>
           </Link>
           
           <Link to="/applications" className="nav-link">

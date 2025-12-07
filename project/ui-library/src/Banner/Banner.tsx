@@ -7,7 +7,6 @@ export interface BenefitItem {
 
 export interface BannerProps {
   title?: string
-  subtitle?: string
   benefits?: BenefitItem[]
   callButtonText?: string
   requestButtonText?: string
@@ -19,7 +18,6 @@ export interface BannerProps {
 
 export function Banner({
   title = 'Туристическое агентство',
-  subtitle = '...',
   benefits = [
     { id: 1, text: '...' },
     { id: 2, text: '...' },
@@ -48,7 +46,6 @@ export function Banner({
       <div className="ui-banner-overlay">
         <div className="ui-banner-content">
           <h1 className="ui-banner-title">{title}</h1>
-          {subtitle && <p className="ui-banner-subtitle">{subtitle}</p>}
           
           {benefits && benefits.length > 0 && (
             <ul className="ui-banner-benefits">
