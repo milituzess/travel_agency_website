@@ -48,7 +48,6 @@ export function Home() {
           <h2>Остались вопросы или хотите забронировать место?</h2>
           <Form 
             onSubmit={(data) => {
-              console.log('Заявка на тур отправлена:', data)
               alert(`Спасибо, ${data.name}! Мы свяжемся с вами по телефону ${data.phone}`)
             }}
           />
