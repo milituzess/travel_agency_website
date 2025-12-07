@@ -27,6 +27,7 @@ function App() {
     } else {
       // Если на другой странице, переходим на главную и потом скроллим
       window.location.href = `/#${sectionId}`
+      scrollToSection(sectionId)
     }
   }
 

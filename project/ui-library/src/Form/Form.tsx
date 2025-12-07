@@ -33,7 +33,7 @@ export const Form: React.FC<FormProps> = ({
       newErrors.name = 'Имя должно содержать не менее 2 символов'
     }
 
-    const phoneRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,}$/
+    const phoneRegex = /^(\+7|8)[\s(-]?\d{3}[\s)-]?\d{3}[\s-]?\d{2}[\s-]?\d{2}$/
     
     if (!formData.phone.trim()) {
       newErrors.phone = 'Пожалуйста, введите номер телефона'
