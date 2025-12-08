@@ -136,14 +136,14 @@ export const tours: Tour[] = [
   },
   {
     id: 5,
-    imageUrl: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb',
+    imageUrl: 'https://avatars.mds.yandex.net/get-yapic/50595/Zk4PkLyRdGNHenmOwcVXCmPrx0-1/orig',
     title: 'Тур 5',
     description: 'Экскурсия по самым живописным местам горного Дагестана. Посещение древних аулов, водопадов и горных перевалов',
     price: 'от 35 000 ₽'
   },
   {
     id: 6,
-    imageUrl: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4',
+    imageUrl: 'https://avatars.mds.yandex.net/get-yapic/50595/Zk4PkLyRdGNHenmOwcVXCmPrx0-1/orig',
     title: 'Тур 6',
     description: 'Экскурсия по самым живописным местам горного Дагестана. Посещение древних аулов, водопадов и горных перевалов',
     price: 'от 120 000 ₽'

@@ -22,7 +22,7 @@ function App() {
     e.preventDefault()
     
     // Если мы на главной странице, просто скроллим
-    if (window.location.pathname === '/') {
+    if (window.location.pathname !== '/') {
       scrollToSection(sectionId)
     } else {
       // Если на другой странице, переходим на главную и потом скроллим
@@ -43,19 +43,19 @@ function App() {
               
               {/* Ссылки на якоря главной страницы  */}
               <li>
-                <a href="#why-are-we" onClick={(e) => handleAnchorClick(e, 'why-are-we')}> Почему мы? </a>
+                <Link to="#why-are-we" onClick={(e) => handleAnchorClick(e, 'why-are-we')}> Почему мы? </Link>
               </li>
               <li>
-                <a href="#reviews" onClick={(e) => handleAnchorClick(e, 'reviews')}> Отзывы </a>
+                <Link to="#reviews" onClick={(e) => handleAnchorClick(e, 'reviews')}> Отзывы </Link>
               </li>
               <li>
-                <a href="#form-section" onClick={(e) => handleAnchorClick(e, 'form-section')}> Оставить заявку </a>
+                <Link to="#form-section" onClick={(e) => handleAnchorClick(e, 'form-section')}> Оставить заявку </Link>
               </li>
               <li>
-                <a href="https://t.me/kessirass_travel_agency_bot" className="nav-phone"> Tg bot </a>
+                <Link to="https://t.me/kessirass_travel_agency_bot" className="nav-phone"> Tg bot </Link>
               </li>
               <li>
-                <a href="tel:+79991234567" className="nav-phone"> +7 (999) 123-45-67 </a>
+                <Link to="tel:+79991234567" className="nav-phone"> +7 (999) 123-45-67 </Link>
               </li>
             </ul>
           </div>
