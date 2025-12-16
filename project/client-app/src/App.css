@@ -1,0 +1,232 @@
+nav {
+  background-color: rgb(79, 119, 79);
+  padding: 1rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  color: rgb(26, 54, 26);
+}
+
+* {
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+/* Основной контейнер приложения */
+.app {
+  min-height: 100%; 
+  background-color: rgba(103, 116, 103, 0.3);
+  /*background: linear-gradient(180deg, #e4dfd4 0%, #b7b3ab 100%); */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Набор шрифтов */
+  line-height: 1.6; /* Межстрочный интервал */
+}
+
+/* Основная область контента */
+.app-main {
+  width: 100%; /* Ширина 100% родителя */
+  margin: 0 auto; /* Центрирование: отступы сверху/снизу 0, слева/справа auto */
+  text-align: center; /* Центрирование текста */
+}
+
+/* Футер приложения */
+.app-footer {
+  width: 100%; /* Ширина 100% */
+  margin: 2rem auto 0; /* Отступы: сверху 2rem, слева/справа auto, снизу 0 */
+}
+
+/* Контент в футере */
+.footer-content {
+  text-align: center; /* Выравнивание текста по центру */
+  color: #666; /* Серый цвет текста */
+}
+
+/* Параграфы в футере */
+.footer-content p {
+  margin: 0.25rem 0; /* Отступы: сверху/снизу 0.25rem (4px), слева/справа 0 */
+}
+
+/* Секции */
+.section {
+  margin-bottom: 3rem; 
+  padding-top: 2rem;
+}
+
+.section h2 {
+  color: #ffffff; /* Цвет текста */
+  margin-bottom: 1.5rem; /* Отступ снизу */
+  font-size: 1.8rem; /* Размер шрифта */
+  text-align: center; /* Выравнивание по центру */
+}
+
+.section h3 {
+  color: #363636; /* Цвет текста */
+  margin-bottom: 1rem; /* Отступ снизу */
+  margin-top: 1rem; /* Отступ снизу */
+  font-size: 1.3rem; /* Размер шрифта */
+  text-align: center; /* Выравнивание по центру */
+}
+
+/* Сетка для карточек туров */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 0;
+  justify-items: center;
+}
+
+/* Стиль для подсказок */
+.demo-hint {
+  font-size: 0.75rem; /* Очень маленький размер шрифта 0.75rem (12px) */
+  color: #888; /* Светло-серый цвет текста */
+  font-style: italic; /* Курсивное начертание */
+  text-align: center; /* Выравнивание по центру */
+}
+
+.description-content {
+  line-height: 1.8;
+  color: #2d3748;
+}
+
+.description-content p {
+  margin-bottom: 1rem;
+  white-space: pre-line;
+}
+
+.description-content p:last-child {
+  margin-bottom: 0;
+}
+
+
+
+
+/* Стили для объединенной секции */
+.tour-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Левая колонка - карточка */
+.details-column {
+  padding: 1.5rem;
+}
+
+/* Правая колонка - карточка */
+.program-column {
+  padding: 1.5rem;
+}
+
+/* Заголовки внутри колонок */
+.details-column h3 {
+  color: #2d3748;
+  margin: 0 0 0 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 1.6rem;
+}
+
+/* Описание тура */
+.description-content p {
+  margin: 1rem 1rem 1rem 1rem;
+  color: #4a5568;
+}
+
+/* Список включенного */
+.included-list {
+  font-size: 1.1rem;
+  list-style: none;
+  padding: 1rem 1rem 1rem 1rem;
+  margin: 0.5rem 1rem 1rem 1rem;
+  background-color: rgba(103, 116, 103, 0.3);
+  border-radius: 10px;
+}
+
+.included-item {
+  padding: 0.1rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.included-item span {
+  line-height: 0.9;
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+}
+
+.check-icon {
+  margin-top: 0.1rem;
+}
+
+/* Таймлайн программы */
+.itinerary-timeline {
+  margin: 3rem 1rem 1rem 1rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-day {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.day-circle {
+  width: 2.8rem;
+  height: 2.8rem;
+  background: rgb(79, 119, 79);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.day-title {
+  color: #2d3748;
+  margin: 0 0 0 1rem;
+  font-size: 1.5rem;
+}
+
+.day-description {
+  color: #718096;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 0.5rem 1.5rem;
+}
+

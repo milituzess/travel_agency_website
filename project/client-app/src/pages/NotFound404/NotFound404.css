@@ -1,0 +1,77 @@
+.simple-not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 2rem;
+}
+
+.app-main-404 h1 {
+  font-size: 5rem;
+  color: #2c2c2c;
+  padding: 1rem 1rem 1rem 1rem;
+  text-align: center;
+}
+
+.app-main-404 p {
+  font-size: 1.5rem;
+  color: #2c2c2c;
+  text-align: center;
+}
+
+.image-container {
+  position: relative;
+  width: 90%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.error-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+.centered-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.back-link {
+  position: relative;
+  background: rgba(179, 179, 179, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  min-width: 200px;
+  color: white;
+  overflow: hidden;
+  text-decoration: none; 
+}
+
+.back-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  backdrop-filter: blur(2px);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.back-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
