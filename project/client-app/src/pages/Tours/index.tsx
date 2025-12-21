@@ -11,11 +11,11 @@ export function Tours() {
   }
 
   return (
-    <div className="app">
+    <div className="app tours-page">
       <main className="app-main">
         <section className="section">
           <h2>Доступные туры</h2>
-          <p>Приключения начинаются здесь</p>
+          <h3>Приключения начинаются здесь</h3>
           
           <div className="products-grid">
             {tours.map((product) => (

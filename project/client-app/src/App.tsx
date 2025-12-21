@@ -1,4 +1,7 @@
+import { useEffect } from 'react'
+
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 import { Home } from './pages/Home'
 import { NotFound404 } from './pages/NotFound404'
@@ -9,30 +12,20 @@ import { Tours } from './pages/Tours'
 import './App.css'
 import '@my-app/ui-library/style.css'
 
+export function ScrollToTop() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)  // скрол вверх
+  }, [pathname])
+
+  return null
+}
+
 function App() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
-
-  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-    e.preventDefault()
-    
-    // Если мы на главной странице, просто скроллим
-    if (window.location.pathname !== '/') {
-      scrollToSection(sectionId)
-    } else {
-      // Если на другой странице, переходим на главную и потом скроллим
-      window.location.href = `/#${sectionId}`
-      scrollToSection(sectionId)
-    }
-  }
-
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <nav className="main-nav">
         <div className="nav-container">
           <div className="nav-links">
@@ -40,16 +33,16 @@ function App() {
               <li><Link to="/">Kessirass</Link></li>
               <li><Link to="/team">Команда</Link></li>
               <li><Link to="/tours">Туры</Link></li>
-              
+
               {/* Ссылки на якоря главной страницы  */}
               <li>
-                <Link to="#why-are-we" onClick={(e) => handleAnchorClick(e, 'why-are-we')}> Почему мы? </Link>
+                <Link to="/#why-are-we">Почему мы?</Link>
               </li>
               <li>
-                <Link to="#reviews" onClick={(e) => handleAnchorClick(e, 'reviews')}> Отзывы </Link>
+                <Link to="/#reviews">Отзывы</Link>
               </li>
               <li>
-                <Link to="#form-section" onClick={(e) => handleAnchorClick(e, 'form-section')}> Оставить заявку </Link>
+                <Link to="/#form-section">Оставить заявку</Link>
               </li>
               <li>
                 <Link to="https://t.me/kessirass_travel_agency_bot" className="nav-phone"> Tg bot </Link>
@@ -59,10 +52,10 @@ function App() {
               </li>
             </ul>
           </div>
-          
+
         </div>
       </nav>
-      
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/team" element={<Team />} />

@@ -9,7 +9,7 @@
 .app-main-404 h1 {
   font-size: 5rem;
   color: #2c2c2c;
-  padding: 1rem 1rem 1rem 1rem;
+  padding: 5rem 1rem 1rem 1rem;
   text-align: center;
 }
 
@@ -22,9 +22,10 @@
 .image-container {
   position: relative;
   width: 90%;
-  border-radius: 12px;
+  border-radius: 30px;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  max-height: 45vh;
 }
 
 .error-image {

@@ -20,10 +20,51 @@ export function ApplicationsManagement() {
     { id: 4, name: 'Елена Смирнова', phone: '+7 (999) 444-55-66', email: 'elena@example.com', tour: 'Тур ...', date: '2024-01-12', status: 'rejected' },
   ])
 
+  // Добавить заявку
+  const handleAdd = () => {
+    const name = prompt('Имя клиента')
+
+    if (!name) return
+
+    const phone = prompt('Телефон') || '+7 (...)'
+    const email = prompt('Email') || 'email@example.com'
+    const tour = prompt('Название тура') || 'Тур ...'
+    const date = prompt('Дата (YYYY-MM-DD)') || new Date().toISOString().slice(0, 10)
+
+    const newId =
+      applications.length > 0
+        ? Math.max(...applications.map(a => a.id)) + 1
+        : 1
+
+    const newApplication: Application = {
+      id: newId,
+      name,
+      phone,
+      email,
+      tour,
+      date,
+      status: 'new'
+    }
+
+    setApplications(prev => [...prev, newApplication])
+  }
+
+  // Обновить статус
   const updateStatus = (id: number, newStatus: Application['status']) => {
-    setApplications(applications.map(app => 
-      app.id === id ? { ...app, status: newStatus } : app
-    ))
+    setApplications(prev =>
+      prev.map(app =>
+        app.id === id ? { ...app, status: newStatus } : app
+      )
+    )
+  }
+
+  // Удалить заявку
+  const handleDelete = (id: number) => {
+    const confirmDelete = window.confirm('Удалить заявку?')
+    
+    if (!confirmDelete) return
+
+    setApplications(prev => prev.filter(app => app.id !== id))
   }
 
   const statusOptions = [
@@ -37,12 +78,30 @@ export function ApplicationsManagement() {
     <div className="applications-management">
       <div className="page-header">
         <h1>Управление заявками</h1>
-        <div className="stats">
-          <span className="stat">Всего: {applications.length}</span>
-          <span className="stat">Новые: {applications.filter(a => a.status === 'new').length}</span>
-        </div>
       </div>
       
+      <div className="page-header">
+        <div className="stats">
+          <span className="stat">Всего: {applications.length}</span>
+          <span className="stat">
+            Новые: {applications.filter(a => a.status === 'new').length}
+          </span>
+          <span className="stat">
+            В обработке: {applications.filter(a => a.status === 'processing').length}
+          </span>
+          <span className="stat">
+            Подтверждена: {applications.filter(a => a.status === 'confirmed').length}
+          </span>
+          <span className="stat">
+            Отклонена: {applications.filter(a => a.status === 'rejected').length}
+          </span>
+        </div>
+
+        <button className="add-button" onClick={handleAdd}>
+          + Добавить заявку
+        </button>
+      </div>
+
       <div className="applications-table">
         <table>
           <thead>
@@ -56,25 +115,33 @@ export function ApplicationsManagement() {
               <th>Действия</th>
             </tr>
           </thead>
+
           <tbody>
-            {applications.map((app) => (
+            {applications.map(app => (
               <tr key={app.id}>
                 <td>#{app.id}</td>
                 <td>{app.name}</td>
+
                 <td>
                   <div className="contact-info">
                     <div>{app.phone}</div>
+                    <div>{app.email}</div>
                   </div>
                 </td>
+
                 <td>{app.tour}</td>
                 <td>{app.date}</td>
+
                 <td>
-                  <select 
+                  <select
                     value={app.status}
-                    onChange={(e) => updateStatus(app.id, e.target.value as Application['status'])}
+                    onChange={e =>
+                      updateStatus(app.id, e.target.value as Application['status'])
+                    }
                     className={`status-select status-${app.status}`}
                     style={{
-                      backgroundColor: statusOptions.find(s => s.value === app.status)?.color
+                      backgroundColor:
+                        statusOptions.find(s => s.value === app.status)?.color
                     }}
                   >
                     {statusOptions.map(option => (
@@ -84,14 +151,21 @@ export function ApplicationsManagement() {
                     ))}
                   </select>
                 </td>
+
                 <td>
                   <div className="action-buttons">
-                    <button className="action-button delete">Удалить</button>
+                    <button
+                      className="action-button delete"
+                      onClick={() => handleDelete(app.id)}
+                    >
+                      Удалить
+                    </button>
                   </div>
                 </td>
               </tr>
             ))}
           </tbody>
+
         </table>
       </div>
     </div>

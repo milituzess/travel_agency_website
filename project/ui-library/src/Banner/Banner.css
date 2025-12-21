@@ -1,6 +1,6 @@
 .ui-banner {
   width: 100%;
-  min-height: 500px;
+  min-height: 100vh;
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -9,9 +9,13 @@
 }
 
 .ui-banner-overlay {
-  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(124, 124, 124, 0.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
   padding: 4rem 2rem;
-  min-height: 500px;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,7 +33,20 @@
   margin: 0 0 5rem 0;
   font-weight: 700;
   line-height: 1.2;
+  text-shadow: 0 1px 9px rgba(0, 0, 0, 0.2);
 }
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .ui-banner-title {
+    font-size: 2rem;
+    margin: 0 0 2rem 0;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 1px 9px rgba(0, 0, 0, 0.2);
+  }
+}
+
 
 .ui-banner-benefits {
   list-style: none;
@@ -59,17 +76,19 @@
 }
 
 .ui-banner-button {
-  background: rgba(179, 179, 179, 0);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 1rem 1.5rem;
-  border-radius: 10px;
+  background-color: rgba(164, 164, 164, 0.1);
+  padding: 1.1rem 4rem;
+  border-radius: 20px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   backdrop-filter: blur(3px);
   box-sizing: border-box;
   min-width: 200px;
-  color: white;
+  color: #ffffff;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.1);
 }
 
 .ui-banner-button:hover {

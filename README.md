@@ -106,36 +106,60 @@ npm run test:coverage
 ```
 
 ## Примеры работы приложения
+![1](<project/pictures-for-readme/admin-panel-1.png>) 
+Страница входа в админку
 
-![1](<project/pictures-for-readme/lab7_image_1.jpg>) 
-Главная страница с баннером и навигацией
+![2](<project/pictures-for-readme/admin-panel-2.png>) 
+Раздел управления заявками в админке
 
-![2](<project/pictures-for-readme/lab7_image_2.jpg>) 
-Каталог туров с карточками товаров
+![3](<project/pictures-for-readme/admin-panel-3.png>) 
+Раздел управления команда в админке
 
-![3](<project/pictures-for-readme/lab7_image_3.jpg>) 
-Детальная страница тура с фотогалереей
+![4](<project/pictures-for-readme/admin-panel-4.png>) 
+Раздел управления турами в админке
 
-![4](<project/pictures-for-readme/lab7_image_4.jpg>) 
-Страница команды с карточками сотрудников
 
-![5](<project/pictures-for-readme/lab7_image_5.jpg>) 
-Форма подачи заявки с валидацией
+![1](<project/pictures-for-readme/client-app-1.png>) 
+Клиентское приложение - банер
 
-![6](<project/pictures-for-readme/lab7_image_6.jpg>) 
-Карточка контактов с соцсетями
+![2](<project/pictures-for-readme/client-app-2.png>) 
+Клиентское приложение - преимущества
 
-![7](<project/pictures-for-readme/lab7_image_7.png>) 
-Страница 404
+![3](<project/pictures-for-readme/client-app-3.png>) 
+Клиентское приложение - отзывы
 
-![8](<project/pictures-for-readme/lab7_image_8.png>) 
-Страница входа для сотрудников
+![4](<project/pictures-for-readme/client-app-4.png>) 
+Клиентское приложение - форма заявки
 
-![9](<project/pictures-for-readme/lab7_image_9.png>) 
-Страница управления турами
+![5](<project/pictures-for-readme/client-app-5.png>) 
+Клиентское приложение - футтер
 
-![10](<project/pictures-for-readme/lab7_image_10.png>) 
-Страница управления заявками
+![6](<project/pictures-for-readme/client-app-6.png>) 
+Клиентское приложение, страница команды
 
-![11](<project/pictures-for-readme/lab7_image_11.png>) 
-Страница управления командой
+![7](<project/pictures-for-readme/client-app-7.png>) 
+Клиентское приложение, страница команды
+
+![8](<project/pictures-for-readme/client-app-8.png>) 
+Клиентское приложение, страница доступных туров
+
+![9](<project/pictures-for-readme/client-app-9.png>) 
+Клиентское приложение, страница доступных туров
+
+![10](<project/pictures-for-readme/client-app-10.png>) 
+Клиентское приложение, страница с информацией о конкретном туре - банер 
+
+![11](<project/pictures-for-readme/client-app-11.png>) 
+Клиентское приложение, страница с информацией о конкретном туре - что будет в туре 
+
+![12](<project/pictures-for-readme/client-app-12.png>) 
+Клиентское приложение, страница с информацией о конкретном туре - что будет в туре
+
+![13](<project/pictures-for-readme/client-app-13.png>) 
+Клиентское приложение, страница с информацией о конкретном туре - подробности 
+
+![14](<project/pictures-for-readme/client-app-14.png>) 
+Клиентское приложение, страница с информацией о конкретном туре - подробности  
+
+![15](<project/pictures-for-readme/client-app-15.png>) 
+Клиентское приложение, страница с информацией о конкретном туре - форма заявки

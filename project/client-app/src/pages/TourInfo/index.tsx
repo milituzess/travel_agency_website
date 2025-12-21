@@ -38,7 +38,7 @@ export function TourInfo() {
   }
 
   return (
-    <div className="app">
+    <div className="app tours-page">
       <main className="app-main">
         {/* Баннер в начале страницы */}
         <Banner 
@@ -63,13 +63,13 @@ export function TourInfo() {
             {/* Левая колонка: Описание и что включено */}
             <div className="details-column">
               <div className="description-block">
-                <div className="description-content">
+                <div className="included-list">
                   <p>{tour.detailedDescription || []}</p>
                 </div>
               </div>
               
               <div className="included-block">
-                <h3>Что включено в стоимость</h3>
+                <h4>Что включено в стоимость</h4>
                 {tour.included && tour.included.length > 0 ? (
                   <ul className="included-list">
                     {tour.included.map((item, index) => (
@@ -88,7 +88,7 @@ export function TourInfo() {
             {/* Правая колонка: Программа по дням */}
             <div className="program-column">
               {tour.itinerary && tour.itinerary.length > 0 ? (
-                <div className="itinerary-timeline">
+                <div className="included-list">
                   {tour.itinerary.map((day) => (
                     <div key={day.day} className="timeline-item">
                       <div className="timeline-day">
@@ -119,7 +119,6 @@ export function TourInfo() {
             }}
           />
         </section>
-        
       </main>
 
       <footer id="contact-section" className="app-footer">

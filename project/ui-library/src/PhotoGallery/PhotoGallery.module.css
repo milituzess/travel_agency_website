@@ -19,7 +19,7 @@
 
 .photoImage {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 25px;
   height: auto; 
   aspect-ratio: 1 / 1; /* соотношение сторон 1:1 */
   object-fit: cover;
@@ -35,12 +35,11 @@
 }
 
 .photoCaption {
-  padding: 0.4rem;
+  padding: 0.25rem;
   font-size: 0.875rem;
   line-height: 1.4;
-  color: #333;
+  color: #ffffff;
   background: rgba(255, 255, 255, 0);
-  
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
