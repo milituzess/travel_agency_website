@@ -1,8 +1,7 @@
-import { Banner, ContactCard, Card, Form } from '@my-app/ui-library'
+import { useEffect, useState } from 'react'
 
-import { useEffect } from 'react'
+import { Banner, ContactCard, Card, Form } from '@my-app/ui-library'
 import { useLocation } from 'react-router-dom'
-import { useState } from "react";
 
 const reviews = [
   {
@@ -20,7 +19,7 @@ const reviews = [
   {
     imageUrl: "https://i.pinimg.com/736x/48/da/0e/48da0eeb08b5dcb45eba975159696a86.jpg",
   },
-];
+]
 
 const whyCards = [
   {
@@ -53,7 +52,7 @@ const whyCards = [
     description1: "Передвигаемся на комфортных микроавтобусах. Они оборудованы двумя кондиционером, на каждого человека настраивается индивидуальный обдув. С приятной акустикой. Кресла кожаные, откидные. Также имеется красивая подсветка, как на дискотеке :)",
     imageUrl: "https://i.pinimg.com/736x/c0/8e/0d/c08e0d16373f070728efc29c05ca63ee.jpg",
   },
-];
+]
 
 export function Home() {
   const demoBenefits = [
@@ -76,35 +75,32 @@ export function Home() {
   }, [location])
 
   /* отзывы */
-  const [currentReview, setCurrentReview] = useState(0);
+  const [currentReview, setCurrentReview] = useState(0)
 
   /* преимущества */
-  const [currentWhy, setCurrentWhy] = useState(0);
+  const [currentWhy, setCurrentWhy] = useState(0)
 
   /* отзывы */
   const nextReview = () => {
-    setCurrentReview((prev) => (prev + 1) % reviews.length);
-  };
+    setCurrentReview((prev) => (prev + 1) % reviews.length)
+  }
 
   const prevReview = () => {
     setCurrentReview((prev) =>
       prev === 0 ? reviews.length - 1 : prev - 1
-    );
-  };
+    )
+  }
 
   /* почему мы */
   const nextWhy = () => {
-    setCurrentWhy((prev) => (prev + 1) % whyCards.length);
-  };
+    setCurrentWhy((prev) => (prev + 1) % whyCards.length)
+  }
 
   const prevWhy = () => {
     setCurrentWhy((prev) =>
       prev === 0 ? whyCards.length - 1 : prev - 1
-    );
-  };
-
-
-  
+    )
+  }
 
   return (
     <div className="app">

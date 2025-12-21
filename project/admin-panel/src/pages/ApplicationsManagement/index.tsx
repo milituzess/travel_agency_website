@@ -23,6 +23,7 @@ export function ApplicationsManagement() {
   // Добавить заявку
   const handleAdd = () => {
     const name = prompt('Имя клиента')
+
     if (!name) return
 
     const phone = prompt('Телефон') || '+7 (...)'
@@ -60,6 +61,7 @@ export function ApplicationsManagement() {
   // Удалить заявку
   const handleDelete = (id: number) => {
     const confirmDelete = window.confirm('Удалить заявку?')
+    
     if (!confirmDelete) return
 
     setApplications(prev => prev.filter(app => app.id !== id))

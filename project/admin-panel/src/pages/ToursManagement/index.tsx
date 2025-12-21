@@ -21,6 +21,7 @@ export function ToursManagement() {
   // Добавить тур
   const handleAdd = () => {
     const title = prompt('Название тура')
+
     if (!title) return
 
     const description = prompt('Описание тура') || ''
@@ -47,6 +48,7 @@ export function ToursManagement() {
   // Редактировать тур
   const handleEdit = (tour: Tour) => {
     const title = prompt('Название тура', tour.title)
+    
     if (!title) return
 
     const description = prompt('Описание', tour.description) || tour.description

@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react'
+
 import './TeamManagement.css'
+
 import { initialTeamMembers } from './Team'
+
 import type { TeamMember } from './Team'
 
 export function TeamManagement() {
   const [members, setMembers] = useState<TeamMember[]>(() => {
     const saved = localStorage.getItem('teamMembers')
+
     return saved ? JSON.parse(saved) : initialTeamMembers
   })
 
@@ -16,6 +20,7 @@ export function TeamManagement() {
   // Добавить сотрудника
   const handleAdd = () => {
     const name = prompt('Введите имя сотрудника')
+
     if (!name) return
 
     const position = prompt('Введите должность') || 'Новая должность'
@@ -39,6 +44,7 @@ export function TeamManagement() {
   // Изменить сотрудника
   const handleEdit = (member: TeamMember) => {
     const name = prompt('Имя', member.name)
+
     if (!name) return
 
     const position = prompt('Должность', member.position) || member.position
@@ -57,6 +63,7 @@ export function TeamManagement() {
   // Удалить сотрудника
   const handleDelete = (id: number) => {
     const confirmDelete = window.confirm('Удалить сотрудника?')
+    
     if (!confirmDelete) return
 
     setMembers(prev => prev.filter(m => m.id !== id))

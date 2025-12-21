@@ -1,4 +1,7 @@
+import { useEffect } from 'react'
+
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 import { Home } from './pages/Home'
 import { NotFound404 } from './pages/NotFound404'
@@ -8,9 +11,6 @@ import { Tours } from './pages/Tours'
 
 import './App.css'
 import '@my-app/ui-library/style.css'
-
-import { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
 
 export function ScrollToTop() {
   const { pathname } = useLocation()
