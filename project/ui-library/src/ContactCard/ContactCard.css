@@ -1,17 +1,44 @@
 .ui-contact-card {
+  position: relative;
   width: 100%;
-  background:  rgb(79, 119, 79);
   color: white;
   padding: 4rem;
   text-align: center;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  background-color: rgba(164, 164, 164, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+  overflow: hidden;
+  margin-top: 1rem;
 }
 
+/* фон с блюром */
+.ui-contact-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* background-image: url("https://i.pinimg.com/1200x/97/a6/3e/97a63e53212a34dd99ed19b43331107a.jpg"); */
+  background-size: cover;
+  background-position: center;
+  filter: blur(4px);
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+/* контент поверх */
+.ui-contact-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* твои стили */
 .ui-contact-card-title {
   font-size: 3rem;
   margin: 0 0 3rem 0;
   font-weight: 700;
   line-height: 1.2;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
 }
 
 .ui-contact-card-phone {
@@ -19,38 +46,48 @@
   font-weight: 700;
   margin: 0 0 3rem 0;
   letter-spacing: 1px;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
 }
+
 
 .ui-contact-card-links {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
 
 .ui-contact-card-link {
   display: inline-block;
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
+  padding: 1rem 5rem;
+  border-radius: 20px;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.9rem;
   transition: all 0.1s ease;
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
+  background: rgba(179, 179, 179, 0);
+  cursor: pointer;
+  backdrop-filter: blur(3px);
+  box-sizing: border-box;
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.1);
 }
 
 .ui-contact-card-link.whatsapp:hover {
-  background-color: #25d365;
-  border-color: #25d365;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .ui-contact-card-link.telegram:hover {
-  background-color: #1eb4ff;
-  border-color: #1eb4ff;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .ui-contact-card-link.vk:hover {
-  background-color: #202d9e;
-  border-color: #202d9e;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.2);
 }

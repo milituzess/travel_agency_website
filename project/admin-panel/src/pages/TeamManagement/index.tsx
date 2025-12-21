@@ -1,30 +1,78 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './TeamManagement.css'
-
-interface TeamMember {
-  id: number
-  name: string
-  position: string
-  email: string
-  phone: string
-  isActive: boolean
-}
+import { initialTeamMembers } from './Team'
+import type { TeamMember } from './Team'
 
 export function TeamManagement() {
-  const [members] = useState<TeamMember[]>([
-    { id: 1, name: 'Иван Иванов', position: 'Менеджер по туризму', email: 'ivan@example.com', phone: '+7 (999) 111-22-33', isActive: true },
-    { id: 2, name: 'Мария Петрова', position: 'Гид-экскурсовод', email: 'maria@example.com', phone: '+7 (999) 222-33-44', isActive: true },
-    { id: 3, name: 'Алексей Сидоров', position: 'Администратор', email: 'alexey@example.com', phone: '+7 (999) 333-44-55', isActive: false },
-    { id: 4, name: 'Елена Смирнова', position: 'Маркетолог', email: 'elena@example.com', phone: '+7 (999) 444-55-66', isActive: true },
-  ])
+  const [members, setMembers] = useState<TeamMember[]>(() => {
+    const saved = localStorage.getItem('teamMembers')
+    return saved ? JSON.parse(saved) : initialTeamMembers
+  })
+
+  useEffect(() => {
+    localStorage.setItem('teamMembers', JSON.stringify(members))
+  }, [members])
+
+  // Добавить сотрудника
+  const handleAdd = () => {
+    const name = prompt('Введите имя сотрудника')
+    if (!name) return
+
+    const position = prompt('Введите должность') || 'Новая должность'
+    const email = prompt('Введите email') || 'email@example.com'
+    const phone = prompt('Введите телефон') || '+7 (...)'
+
+    const newMember: TeamMember = {
+      id: members.length > 0
+        ? Math.max(...members.map(m => m.id)) + 1
+        : 1,
+      name,
+      position,
+      email,
+      phone,
+      isActive: true
+    }
+
+    setMembers(prev => [...prev, newMember])
+  }
+
+  // Изменить сотрудника
+  const handleEdit = (member: TeamMember) => {
+    const name = prompt('Имя', member.name)
+    if (!name) return
+
+    const position = prompt('Должность', member.position) || member.position
+    const email = prompt('Email', member.email) || member.email
+    const phone = prompt('Телефон', member.phone) || member.phone
+
+    setMembers(prev =>
+      prev.map(m =>
+        m.id === member.id
+          ? { ...m, name, position, email, phone }
+          : m
+      )
+    )
+  }
+
+  // Удалить сотрудника
+  const handleDelete = (id: number) => {
+    const confirmDelete = window.confirm('Удалить сотрудника?')
+    if (!confirmDelete) return
+
+    setMembers(prev => prev.filter(m => m.id !== id))
+  }
 
   return (
     <div className="team-management">
       <div className="page-header">
         <h1>Управление командой</h1>
-        <button className="add-button">+ Добавить сотрудника</button>
       </div>
-      
+      <div className="page-header">
+        <button className="add-button" onClick={handleAdd}>
+          + Добавить сотрудника
+        </button>
+      </div>
+
       <div className="team-table">
         <table>
           <thead>
@@ -37,10 +85,12 @@ export function TeamManagement() {
               <th>Действия</th>
             </tr>
           </thead>
+
           <tbody>
-            {members.map((member) => (
+            {members.map(member => (
               <tr key={member.id}>
                 <td>#{member.id}</td>
+
                 <td>
                   <div className="member-info">
                     <div className="member-avatar">
@@ -49,18 +99,32 @@ export function TeamManagement() {
                     <div className="member-name">{member.name}</div>
                   </div>
                 </td>
+
                 <td>{member.position}</td>
                 <td>{member.email}</td>
                 <td>{member.phone}</td>
+
                 <td>
                   <div className="action-buttons">
-                    <button className="action-button edit">Изменить</button>
-                    <button className="action-button delete">Удалить</button>
+                    <button
+                      className="action-button edit"
+                      onClick={() => handleEdit(member)}
+                    >
+                      Изменить
+                    </button>
+
+                    <button
+                      className="action-button delete"
+                      onClick={() => handleDelete(member.id)}
+                    >
+                      Удалить
+                    </button>
                   </div>
                 </td>
               </tr>
             ))}
           </tbody>
+
         </table>
       </div>
     </div>

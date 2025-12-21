@@ -1,9 +1,15 @@
 .form-container {
-  width: 40%;
-  margin: 0 auto;
+  width: 50%;
+  margin: 2rem auto;
+  margin-bottom: 5rem;
   padding: 2rem;
-  border-radius: 10px;
-  background: rgba(79, 119, 79);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(164, 164, 164, 0.1);
+  font-weight: 200;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(3px);
 }
 
 .form {
@@ -26,30 +32,30 @@
 
 .form-label::after {
   content: ' *';
-  color: #e53e3e;
+  color: #b50000;
 }
 
 .form-input {
   width: 100%;
   padding: 0.875rem 1rem;
-  border: 2px solid #e2e8f0;
-  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 18px;
   font-size: 1rem;
-  color: #2d3748;
-  background: #f8fafc;
+  color: #412824;
+  background: rgba(255, 255, 255, 0.2);
   transition: all 0.2s ease;
   box-sizing: border-box;
 }
 
 .form-input::placeholder {
-  color: #a0aec0;
+  color: #ffffff7c;
 }
 
 .form-input:focus {
   outline: none;
-  border-color: rgb(79, 119, 79);
-  background: white;
-  box-shadow: 0 0 0 3px rgba(79, 119, 79, 0.15);
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .form-input-error {
@@ -75,25 +81,21 @@
 }
 
 .form-submit {
-  background: rgb(121, 169, 121);
+  background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 1rem 1.5rem;
-  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 15px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   backdrop-filter: blur(3px);
   box-sizing: border-box;
-  min-width: 200px;
+  width: 100%;
   color: white;
-  font-size: 1rem;
-  margin-top: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 .form-submit:hover {
-  background: rgba(121, 169, 121, 0.5);
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(3px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
@@ -116,15 +118,17 @@
 .form-success {
   text-align: center;
   padding: 2rem 1rem;
-  background: #f0fff4;
-  border-radius: 8px;
-  border: 2px solid #9ae6b4;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(3px);
+  box-shadow: 0 0px 12px rgba(0, 255, 64, 0.11);
 }
 
 .success-message {
-  color: #276749;
+  color: #ffffff;
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 500;
   margin: 0 0 0.5rem 0;
 }
 

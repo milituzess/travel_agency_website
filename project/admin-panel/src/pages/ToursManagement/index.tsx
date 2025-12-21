@@ -18,54 +18,115 @@ export function ToursManagement() {
     { id: 4, title: 'Тур', description: 'Описание', price: '88 000 ₽', isActive: true, imageUrl: '' },
   ])
 
-  const toggleTourStatus = (id: number) => {
-    setTours(tours.map(tour => 
-      tour.id === id ? { ...tour, isActive: !tour.isActive } : tour
-    ))
+  // Добавить тур
+  const handleAdd = () => {
+    const title = prompt('Название тура')
+    if (!title) return
+
+    const description = prompt('Описание тура') || ''
+    const price = prompt('Цена') || '0 ₽'
+    const imageUrl = prompt('URL изображения') || ''
+
+    const newId =
+      tours.length > 0
+        ? Math.max(...tours.map(t => t.id)) + 1
+        : 1
+
+    const newTour: Tour = {
+      id: newId,
+      title,
+      description,
+      price,
+      imageUrl,
+      isActive: true
+    }
+
+    setTours(prev => [...prev, newTour])
   }
 
+  // Редактировать тур
+  const handleEdit = (tour: Tour) => {
+    const title = prompt('Название тура', tour.title)
+    if (!title) return
+
+    const description = prompt('Описание', tour.description) || tour.description
+    const price = prompt('Цена', tour.price) || tour.price
+    const imageUrl = prompt('URL изображения', tour.imageUrl) || tour.imageUrl
+
+    setTours(prev =>
+      prev.map(t =>
+        t.id === tour.id
+          ? { ...t, title, description, price, imageUrl }
+          : t
+      )
+    )
+  }
+
+  // Вкл / выкл тур
+  const toggleTourStatus = (id: number) => {
+    setTours(prev =>
+      prev.map(tour =>
+        tour.id === id
+          ? { ...tour, isActive: !tour.isActive }
+          : tour
+      )
+    )
+  }
+
+  // Удалить тур
   const deleteTour = (id: number) => {
-    if (window.confirm('Вы уверены, что хотите удалить этот тур?')) {
-      setTours(tours.filter(tour => tour.id !== id))
-    }
+    if (!window.confirm('Вы уверены, что хотите удалить этот тур?')) return
+    setTours(prev => prev.filter(tour => tour.id !== id))
   }
 
   return (
     <div className="tours-management">
       <div className="page-header">
         <h1>Управление турами</h1>
-        <button className="add-button">+ Добавить новый тур</button>
       </div>
-      
+      <div className="page-header">
+        <button className="add-button" onClick={handleAdd}>
+          + Добавить новый тур
+        </button>
+      </div>
+
       <div className="tours-grid">
-        {tours.map((tour) => (
-          <div key={tour.id} className={`tour-card ${!tour.isActive ? 'inactive' : ''}`}>
+        {tours.map(tour => (
+          <div
+            key={tour.id}
+            className={`tour-card ${!tour.isActive ? 'inactive' : ''}`}
+          >
             <div className="tour-header">
               <h3 className="tour-title">{tour.title}</h3>
-              <span className={`status-badge ${tour.isActive ? 'active' : 'inactive'}`}>
+
+              <span
+                className={`status-badge ${tour.isActive ? 'active' : 'inactive'}`}
+              >
                 {tour.isActive ? 'Активен' : 'Не активен'}
               </span>
             </div>
-            
+
             <p className="tour-description">{tour.description}</p>
             <div className="tour-price">{tour.price}</div>
-            
+
             <div className="tour-actions">
-              <button 
+              <button
                 className="action-button edit"
-                onClick={() => console.log('Редактировать тур', tour.id)}
+                onClick={() => handleEdit(tour)}
               >
                 Редактировать
               </button>
-              
-              <button 
-                className={`action-button toggle ${tour.isActive ? 'deactivate' : 'activate'}`}
+
+              <button
+                className={`action-button toggle ${
+                  tour.isActive ? 'deactivate' : 'activate'
+                }`}
                 onClick={() => toggleTourStatus(tour.id)}
               >
                 {tour.isActive ? 'Выключить' : 'Включить'}
               </button>
-              
-              <button 
+
+              <button
                 className="action-button delete"
                 onClick={() => deleteTour(tour.id)}
               >
