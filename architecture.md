@@ -12,14 +12,16 @@ client-app/
 │   ├── components/     
 │   ├── pages/         
 │   │   ├── Home/
+│   │   ├── NotFound404/
 │   │   ├── Tours/
 │   │   ├── TourInfo/
 │   │   └── Team/
 │   ├── App.css  
 │   ├── App.test.tsx
 │   ├── App.tsx  
-│   ├── index.css        
-│   └── main.tsx
+│   ├── index.css
+│   ├── main.tsx         
+│   └── setupTest.ts
 ├── .gitignore
 ├── eslint.config.js
 ├── index.html
@@ -32,7 +34,7 @@ client-app/
 ```
 ### admin-panel - административная панель
 ```
-admin-panel/
+client-app/
 ├── public/
 │   └── vite.svg
 ├── src/
@@ -40,15 +42,16 @@ admin-panel/
 │   │   └── react.svg
 │   ├── components/     
 │   ├── pages/         
+│   │   ├── ApplicationsManagement/
 │   │   ├── Login/
-│   │   ├── Dashboard/
-│   │   ├── ToursManagement/
-│   │   └── TeamManagement/
+│   │   ├── TeamManagement/
+│   │   └── ToursManagement/
 │   ├── App.css  
 │   ├── App.test.tsx
 │   ├── App.tsx  
-│   ├── index.css        
-│   └── main.tsx
+│   ├── index.css
+│   ├── main.tsx         
+│   └── setupTest.ts
 ├── .gitignore
 ├── eslint.config.js
 ├── index.html
@@ -63,26 +66,28 @@ admin-panel/
 ```
 ui-library/
 ├── src/
-│   ├── Button/
-│   ├── Form/
-│   ├── Input/
+│   ├── Banner/
 │   ├── Card/
+│   ├── ContactCard/
+│   ├── Form/
 │   ├── PhotoGallery/
 │   ├── ProductCard/
-│   └── index.ts      
-├── package.json
-├── .gitignore
+│   ├── TeamCard/
+│   ├── index.ts
+│   └── setupTests.ts
+├── .gitignore  
 ├── eslint.config.js
-├── jest.config.js
-├── vite.config.js
-└── tsconfig.json
+├── jest.config.js    
+├── package.json
+├── tsconfig.json
+└── vite.config.js
 ```
 
 ## Технологический стек
 ### Runtime зависимости
 - react ^19.2.0 - UI библиотека
 - react-dom ^19.2.0 - Рендеринг React
-- react-router-dom ^6.0.0 - Маршрутизация
+- react-router-dom ^7.9.6 - Маршрутизация
 - @my-app/ui-library * - Локальные UI-компоненты
 
 #### Dev зависимости
@@ -92,30 +97,31 @@ ui-library/
 - jest ^30.2.0 - Тестирование
 
 ## Компоненты
-- Button - Универсальная кнопка с вариантами стилей
-- Form - Базовая форма с валидацией
-- Input - Поле ввода данных
-- Card - Контейнер для контента
-- PhotoGallery - Галерея изображений
-- ProductCard - Карточка товара для туров
+1. PhotoGallery - Адаптивная галерея фотографий
+2. ProductCard - Карточка товара(тура)
+3. Banner - Главный баннер страницы с фоновым изображением
+4. Card - Универсальный контейнер для контента
+5. ContactCard - Карточка контактов с ссылками на соцсети:
+6. Form - Форма для подачи заявок
+7. TeamCard - Карточка сотрудника команды
 
 ## Структура роутинга приложений
 ### Клиентское приложение
 ```
 Главная страница
 ├── Наша команда
-└── Наши программы
-    ├── Тур 1
-    ├── Тур 2
-    └── ...
+├── Наши программы
+│   ├── Тур 1
+│   ├── Тур 2
+│   └── ...
+└── 404
 ```
 ### Административная панель
 ```
 Страница входа
 ├── Управление турами
-├── Редактирование туров
 ├── Управление командой
 └── Обработка заявок
 ```
 ## Хранение данных
-Данные хранятся в локальных JSON-файлах. Состояние управляется через React hooks (useState, useContext). Административная панель поддерживает CRUD-операции с сохранением в локальном состоянии.
+Данные хранятся в локальных ts-файлах
